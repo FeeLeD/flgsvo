@@ -9,7 +9,14 @@
     "lib": ["dom", "es2015", "es2017"],
     "noEmitOnError": true,
     "strict": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "~components/*": ["src/components/*"],
+      "~icons/*": ["src/icons/*"],
+      "~templates/*": ["src/templates/*"],
+      "~utils/*": ["src/utils/*"],
+    }
   },
   "include": ["./src/**/*"]
 }

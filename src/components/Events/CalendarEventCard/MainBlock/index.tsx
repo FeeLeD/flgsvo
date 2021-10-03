@@ -23,7 +23,7 @@ const MainBlock: FC<Props> = ({ title, disciplines, content, links }) => {
   const isEmptyEvent = noDisciplines && (!content || content === "");
 
   return (
-    <Grid gridTemplateColumns="auto 160px" p="24px">
+    <Grid gridTemplateColumns="auto 140px" gridGap='24px' p="24px">
       <Stack spacing="20px">
         <Text fontSize="h3" fontWeight="500" children={title} />
 

@@ -5,6 +5,7 @@
  * https://www.gatsbyjs.com/docs/gatsby-config/
  *
  */
+const path = require("path");
 
 module.exports = {
   /**
@@ -15,6 +16,17 @@ module.exports = {
    */
   plugins: [
     `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "~components": path.resolve(__dirname, "src/components"),
+          "~icons": path.resolve(__dirname, "src/icons"),
+          "~utils": path.resolve(__dirname, "src/utils"),
+          "~templates": path.resolve(__dirname, "src/templates"),
+        },
+      },
+    },
     {
       /**
        * First up is the WordPress source plugin that connects Gatsby

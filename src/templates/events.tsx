@@ -13,6 +13,48 @@ type Events = {
 };
 
 const EventsPage: FC<{ data: Events }> = ({ data }) => {
+  /* const events = [
+    {
+      id: "asdasd",
+      title: "Title",
+      // content: undefined,
+      date: new Date(2021,9, 2).toString(),
+      endDate: new Date(2021,9, 2).toString(),
+      link: undefined,
+      eventsCategories: {
+        nodes: [],
+      },
+      tags: {
+        nodes: [],
+      },
+      venue: {
+        title: "Place title",
+        address: "Place address",
+        city: "Place city",
+      },
+    },
+    {
+      id: "asdasasdsadad",
+      title: "Title Title",
+      // content: undefined,
+      date: new Date(2021, 9, 3).toString(),
+      endDate: new Date(2021, 9, 3).toString(),
+      link: undefined,
+      eventsCategories: {
+        nodes: [],
+      },
+      tags: {
+        nodes: [],
+      },
+      venue: {
+        title: "Place title",
+        address: "Place address",
+        city: "Place city",
+      },
+    },
+    ...data.allWpEvent.nodes,
+  ]; */
+
   return (
     <Layout>
       <Seo title="Календарь" />

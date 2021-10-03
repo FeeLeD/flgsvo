@@ -5,6 +5,7 @@ import { NormalizedEvent_Venue } from "../../types";
 import { Stack } from "@chakra-ui/react";
 import CompetitionTypeTag from "./CompetitionTypeTag";
 import InfoSection from "./InfoSection";
+import { CalendarSvg, LocationSvg } from "~icons/index";
 
 type Props = {
   competitionTypes: string[] | undefined;
@@ -27,14 +28,14 @@ const LeftBlock: FC<Props> = ({
       <CompetitionTypeTag children={competitionTypes[0]} />
 
       <InfoSection
-        iconImg="/calendar.svg"
+        icon={<CalendarSvg boxSize="20px" color="winter.85" />}
         title={dateHandler.getDateRange({ startDate, endDate })}
         description={dateHandler.getDaysRange({ startDate, endDate })}
       />
 
       {!noLocation && (
         <InfoSection
-          iconImg="/location.svg"
+          icon={<LocationSvg boxSize="20px" color="winter.85" />}
           title={venue?.title}
           description={venue?.description}
         />

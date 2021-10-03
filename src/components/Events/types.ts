@@ -35,6 +35,11 @@ export type WPEvent_EventsCategories = {
 
 // ––––––––––––––––––––––––––––––––––––––––––––
 
+export type EventsSet = {
+  date: dayjs.Dayjs;
+  events: WPEvent[];
+};
+
 export type NormalizedEvent = {
   id: string;
   title?: string;
