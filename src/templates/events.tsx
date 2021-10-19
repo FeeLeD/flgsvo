@@ -57,7 +57,10 @@ const EventsPage: FC<{ data: Events }> = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Календарь" />
+      <Seo
+        title="Календарь"
+        description="Календарь соревнований сайта Федерации лыжных гонок Свердловской области"
+      />
 
       <Stack spacing="24px">
         <Heading fontSize="h1">Календарь</Heading>
@@ -78,6 +81,7 @@ export const query = graphql`
         title
         content
         date
+        startDate
         endDate
         link
         eventsCategories {

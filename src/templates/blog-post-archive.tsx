@@ -1,21 +1,10 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import parse from "html-react-parser";
 
 import Bio from "../components/bio";
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
-import {
-  Box,
-  Grid,
-  Heading,
-  HStack,
-  Image,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import { dateHandler } from "../components/Events/dates";
-import dayjs from "dayjs";
+import { Box, Grid, Heading, Stack } from "@chakra-ui/react";
 import Post from "../components/Posts/Post";
 
 const BlogIndex = ({
@@ -40,7 +29,10 @@ const BlogIndex = ({
 
   return (
     <Layout>
-      <Seo title="Новости" />
+      <Seo
+        title="Новости"
+        description="Лента новостей сайта Федерации лыжных гонок Свердловской области"
+      />
 
       <Grid gridTemplateColumns="800px auto" gridGap="24px">
         <Stack spacing="24px">

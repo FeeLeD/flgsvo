@@ -1,14 +1,20 @@
 import React, { FC } from "react";
 import { graphql } from "gatsby";
+import parse from "html-react-parser";
 import { Box, Heading, Stack } from "@chakra-ui/react";
 import Layout from "../components/Layout";
-import parse from "html-react-parser";
+import Seo from "~components/seo";
 
 const InfoPage: FC<{ data: { page: { title: string; content: string } } }> = ({
   data: { page },
 }) => {
   return (
     <Layout>
+      <Seo
+        title={page.title}
+        description="Страница сайта Федерации лыжных гонок Свердловской области"
+      />
+
       <Stack spacing="18px">
         <Heading fontSize="h1">{page.title}</Heading>
 

@@ -41,7 +41,7 @@ const HeaderMenu: FC = () => {
   `);
 
   return (
-    <HStack p="18px" borderRadius="8px" bg="white" justify="space-around">
+    <HStack pt="12px" justify="space-around">
       <Link tabIndex={-1} href="/" _hover={{ textDecor: "none" }}>
         <Button w="150px" children="Новости" />
       </Link>

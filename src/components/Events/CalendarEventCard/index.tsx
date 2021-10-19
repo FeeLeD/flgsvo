@@ -11,12 +11,13 @@ type Props = {
 };
 
 const CalendarEventCard: FC<Props> = ({ event }) => {
+  console.log(event);
   const normalizedEvent: NormalizedEvent = useMemo(() => {
     return {
       id: event.id,
       title: event.title ?? "Событие",
       content: normalizeEvent.content(event.content),
-      date: dayjs(event.date),
+      startDate: dayjs(event.startDate),
       endDate: dayjs(event.endDate),
       link: event.link,
       competitionTypes: normalizeEvent.tags(event.tags),
@@ -31,7 +32,7 @@ const CalendarEventCard: FC<Props> = ({ event }) => {
       <LeftBlock
         competitionTypes={normalizedEvent.competitionTypes}
         dates={{
-          startDate: dayjs(normalizedEvent.date),
+          startDate: dayjs(normalizedEvent.startDate),
           endDate: dayjs(normalizedEvent.endDate),
         }}
         venue={normalizedEvent.venue}

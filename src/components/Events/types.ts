@@ -5,6 +5,7 @@ export type WPEvent = {
   title?: string;
   content?: string;
   date?: string;
+  startDate?: string;
   endDate?: string;
   link?: string;
   venue?: WPEvent_Venue;
@@ -44,7 +45,7 @@ export type NormalizedEvent = {
   id: string;
   title?: string;
   content?: string;
-  date?: dayjs.Dayjs;
+  startDate?: dayjs.Dayjs;
   endDate?: dayjs.Dayjs;
   link?: string;
   venue?: NormalizedEvent_Venue;

@@ -22,7 +22,7 @@ const TagsRow: FC<Props> = ({ type, tags }) => {
   return (
     <HStack color={ROW_COLOR[type]}>
       <Text fontSize="md" w="70px" children={ROW_TITLE[type]} />
-      {tags?.map((tag, i) => (
+      {tags?.sort().map((tag, i) => (
         <DisciplineTag key={i} children={tag} />
       ))}
     </HStack>

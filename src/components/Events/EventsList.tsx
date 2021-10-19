@@ -14,7 +14,7 @@ const EventsList: FC<Props> = ({ events = [] }) => {
   const [showAll, setShowAll] = useState(false);
 
   const pastEventsExist = events.some(event =>
-    dayjs(event.date).isBefore(dayjs().add(-1, "day"))
+    dayjs(event.startDate).isBefore(dayjs().add(-1, "day"))
   );
 
   const showSearchedFilter = (event: WPEvent) => {
@@ -23,7 +23,7 @@ const EventsList: FC<Props> = ({ events = [] }) => {
 
   const removePastEventsFilter = (event: WPEvent) => {
     return (
-      dayjs(event.date).isAfter(dayjs().add(-1, "day")) &&
+      dayjs(event.startDate).isAfter(dayjs().add(-1, "day")) &&
       showSearchedFilter(event)
     );
   };

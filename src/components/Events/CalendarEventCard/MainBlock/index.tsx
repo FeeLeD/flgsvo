@@ -36,7 +36,7 @@ const MainBlock: FC<Props> = ({ title, disciplines, content, links }) => {
           </HStack>
         )}
 
-        {!noDisciplines && (
+        {/* {!noDisciplines && (
           <Stack spacing="8px">
             {disciplines?.women && disciplines.women.length > 0 && (
               <TagsRow type="women" tags={disciplines.women} />
@@ -46,7 +46,7 @@ const MainBlock: FC<Props> = ({ title, disciplines, content, links }) => {
               <TagsRow type="men" tags={disciplines.men} />
             )}
           </Stack>
-        )}
+        )} */}
 
         <Box fontSize="md">{parse(content ?? "")}</Box>
       </Stack>
