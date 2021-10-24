@@ -4,18 +4,31 @@ import {
   NormalizedEvent_Disciplines,
   NormalizedEvent_Links,
 } from "../../types";
-import { Box, Grid, HStack, Image, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  GridProps,
+  HStack,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import LinksBlock from "./LinksBlock";
-import TagsRow from "./TagsRow";
 
 type Props = {
   title: string | undefined;
   disciplines: NormalizedEvent_Disciplines | undefined;
   content: string | undefined;
   links: NormalizedEvent_Links;
-};
+} & GridProps;
 
-const MainBlock: FC<Props> = ({ title, disciplines, content, links }) => {
+const MainBlock: FC<Props> = ({
+  title,
+  disciplines,
+  content,
+  links,
+  ...gridProps
+}) => {
   const noDisciplines =
     (!disciplines?.men || disciplines.men.length === 0) &&
     (!disciplines?.women || disciplines.women.length === 0);
@@ -23,7 +36,12 @@ const MainBlock: FC<Props> = ({ title, disciplines, content, links }) => {
   const isEmptyEvent = noDisciplines && (!content || content === "");
 
   return (
-    <Grid gridTemplateColumns="auto 140px" gridGap='24px' p="24px">
+    <Grid
+      gridTemplateColumns={["1fr", "1fr", "1fr", "auto 140px"]}
+      gridGap="24px"
+      p={["24px 24px 0", "24px 24px 0", "24px"]}
+      {...gridProps}
+    >
       <Stack spacing="20px">
         <Text fontSize="h3" fontWeight="500" children={title} />
 
@@ -38,19 +56,19 @@ const MainBlock: FC<Props> = ({ title, disciplines, content, links }) => {
 
         {/* {!noDisciplines && (
           <Stack spacing="8px">
-            {disciplines?.women && disciplines.women.length > 0 && (
-              <TagsRow type="women" tags={disciplines.women} />
+          {disciplines?.women && disciplines.women.length > 0 && (
+            <TagsRow type="women" tags={disciplines.women} />
             )}
-
+            
             {disciplines?.men && disciplines.men.length > 0 && (
               <TagsRow type="men" tags={disciplines.men} />
-            )}
-          </Stack>
-        )} */}
+              )}
+              </Stack>
+            )} */}
 
         <Box fontSize="md">{parse(content ?? "")}</Box>
       </Stack>
-
+      
       <LinksBlock links={links} />
     </Grid>
   );

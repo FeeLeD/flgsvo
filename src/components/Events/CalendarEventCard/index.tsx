@@ -11,7 +11,6 @@ type Props = {
 };
 
 const CalendarEventCard: FC<Props> = ({ event }) => {
-  console.log(event);
   const normalizedEvent: NormalizedEvent = useMemo(() => {
     return {
       id: event.id,
@@ -28,8 +27,14 @@ const CalendarEventCard: FC<Props> = ({ event }) => {
   }, [event]);
 
   return (
-    <Grid gridTemplateColumns="250px auto" bg="white" borderRadius="8px">
+    <Grid
+      gridTemplateColumns={["1fr", "1fr", "250px auto"]}
+      gridTemplateAreas={`"a" "b"`}
+      bg="white"
+      borderRadius="8px"
+    >
       <LeftBlock
+        gridArea={["b", "b", "a"]}
         competitionTypes={normalizedEvent.competitionTypes}
         dates={{
           startDate: dayjs(normalizedEvent.startDate),
@@ -39,6 +44,7 @@ const CalendarEventCard: FC<Props> = ({ event }) => {
       />
 
       <MainBlock
+        gridArea={["a", "a", "b"]}
         title={normalizedEvent.title}
         disciplines={normalizedEvent.disciplines}
         content={normalizedEvent.content}

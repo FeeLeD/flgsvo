@@ -7,21 +7,30 @@ import {
   MenuItem,
   MenuList,
   Link,
+  ButtonProps,
+  MenuListProps,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
 type Props = {
   title: string;
+  buttonProps?: ButtonProps;
+  menuListProps?: MenuListProps;
   items: Array<{
     label: string;
     url: string;
   }>;
 };
 
-const HeaderMenuItem: FC<Props> = ({ title, items = [] }) => {
+const HeaderMenuItem: FC<Props> = ({
+  title,
+  items = [],
+  buttonProps,
+  menuListProps,
+}) => {
   return (
-    <Box>
-      <Menu >
+    <Box w="100%">
+      <Menu>
         {({ isOpen }) => (
           <>
             <MenuButton
@@ -35,9 +44,15 @@ const HeaderMenuItem: FC<Props> = ({ title, items = [] }) => {
                 />
               }
               children={title}
+              {...buttonProps}
             />
 
-            <MenuList bg="winter.85" py="24px" borderColor="winter.90">
+            <MenuList
+              bg="winter.85"
+              py="24px"
+              borderColor="winter.90"
+              {...menuListProps}
+            >
               {items.map((item, i) => (
                 <Link
                   key={i}

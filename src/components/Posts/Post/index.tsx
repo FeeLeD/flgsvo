@@ -31,7 +31,12 @@ const Post: FC<Props> = ({ date, title, content }) => {
   }, []);
 
   return (
-    <Stack bg="white" p="32px" borderRadius="8px" spacing="24px">
+    <Stack
+      bg="white"
+      p={["16px", "24px", "32px"]}
+      borderRadius="8px"
+      spacing="24px"
+    >
       <HStack spacing="16px">
         <Image w="40px" h="40px" src="flgso.svg" />
         <Text

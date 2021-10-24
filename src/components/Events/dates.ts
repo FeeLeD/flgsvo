@@ -78,6 +78,13 @@ export const dateHandler = {
       return translateFullDateToRussian(startDateString);
     }
 
+    if (
+      startDate.isSame(dayjs(new Date(2021, 11, 1)), "day") &&
+      endDate?.isSame(dayjs(new Date(2022, 2, 31)), "day")
+    ) {
+      return `По положению`;
+    }
+
     if (endDateString) {
       return `
         ${translateFullDateToRussian(startDateString)} – 
@@ -101,6 +108,13 @@ export const dateHandler = {
 
     if (startDate.isSame(endDate, "date")) {
       return translateDayToRussian(startDayString);
+    }
+
+    if (
+      startDate.isSame(dayjs(new Date(2021, 11, 1)), "day") &&
+      endDate?.isSame(dayjs(new Date(2022, 2, 31)), "day")
+    ) {
+      return ``;
     }
 
     if (endDayString) {

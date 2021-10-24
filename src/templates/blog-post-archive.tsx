@@ -12,7 +12,6 @@ const BlogIndex = ({
   pageContext: { nextPagePath, previousPagePath },
 }) => {
   const posts = data.allWpPost.nodes;
-  console.log(data.allWpPost);
 
   if (!posts.length) {
     return (
@@ -34,7 +33,10 @@ const BlogIndex = ({
         description="Лента новостей сайта Федерации лыжных гонок Свердловской области"
       />
 
-      <Grid gridTemplateColumns="800px auto" gridGap="24px">
+      <Grid
+        gridTemplateColumns={["1fr", "1fr", "1fr", "800px auto"]}
+        gridGap="24px"
+      >
         <Stack spacing="24px">
           <Stack spacing="18px">
             <Heading fontSize="h1">Новости</Heading>

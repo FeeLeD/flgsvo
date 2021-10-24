@@ -1,6 +1,10 @@
 import React, { FC } from "react";
 import { Box, Image, HStack, Stack, Text, Link } from "@chakra-ui/react";
 import { graphql, useStaticQuery } from "gatsby";
+import { SnowflakeSvg } from "~icons/SnowflakeSvg";
+import { VkSvg } from "~icons/VkSvg";
+import { FacebookSvg } from "~icons/FacebookSvg";
+import { InstagramSvg } from "~icons/InstagramSvg";
 
 const Footer: FC = () => {
   const {
@@ -32,34 +36,43 @@ const Footer: FC = () => {
   `);
 
   return (
-    <Box w="100%" h="230px" bg="#35363A" pt="72px">
-      <HStack w="1150px" mx="auto" justify="space-between">
+    <Box w="100%" h="fit-content" bg="#35363A" py="72px">
+      <HStack
+        w={["95%", "95%", "90%", "1150px"]}
+        mx="auto"
+        flexDirection={["column", "row"]}
+        justify="space-between"
+      >
         <HStack spacing="32px">
-          <Image src="/snowflake.svg" />
+          <SnowflakeSvg
+            display={["none", "none", "initial"]}
+            boxSize="76px"
+            color="rgba(255,255,255,0.7)"
+          />
 
-          <Stack w="50%" color="#FAFAFA">
+          <Stack w={["100%", "70%", "50%", "50%"]} color="#FAFAFA">
             <Text as="b" children={title} />
 
             <Text children={footerContent} />
           </Stack>
         </HStack>
 
-        <HStack>
+        <HStack pt={["32px", "0"]}>
           {vk && (
             <Link href={vk} isExternal>
-              <Image src="/vk.svg" />
+              <VkSvg boxSize="32px" />
             </Link>
           )}
 
           {facebook && (
             <Link href={facebook} isExternal>
-              <Image src="/facebook.svg" />
+              <FacebookSvg boxSize="32px" />
             </Link>
           )}
 
           {instagram && (
             <Link href={instagram} isExternal>
-              <Image src="/instagram.svg" />
+              <InstagramSvg boxSize="32px" />
             </Link>
           )}
         </HStack>
