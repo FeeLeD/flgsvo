@@ -29,7 +29,7 @@ const CalendarEventCard: FC<Props> = ({ event }) => {
   return (
     <Grid
       gridTemplateColumns={["1fr", "1fr", "250px auto"]}
-      gridTemplateAreas={`"a" "b"`}
+      gridTemplateAreas={`"a c" "b b"`}
       bg="white"
       borderRadius="8px"
     >
@@ -44,7 +44,7 @@ const CalendarEventCard: FC<Props> = ({ event }) => {
       />
 
       <MainBlock
-        gridArea={["a", "a", "b"]}
+        gridArea={["a", "a", "c"]}
         title={normalizedEvent.title}
         disciplines={normalizedEvent.disciplines}
         content={normalizedEvent.content}
