@@ -20,7 +20,7 @@ const Header: FC = () => {
 
   return (
     <HStack my="32px" spacing="24px">
-      <Image w="100px" h="100px" src="/flgso.svg" alt="Логотип" />
+      <Image w="100px" h="100px" src="/flgso.svg" alt="ФЛГСО" />
 
       <Stack spacing="4px">
         <Heading fontSize="h2">{title}</Heading>
