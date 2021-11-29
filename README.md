@@ -6,4 +6,9 @@
   <h1 align="center">
     Sverdlovsk Oblast Ski Federation
   </h1>
+  
+  <p>Playground to test some features</p>
+  <p>Far away from being finished</p>
 </div>
+
+
